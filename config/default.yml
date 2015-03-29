@@ -1,0 +1,18 @@
+server:
+  port: 3000
+
+session:
+  name: adf
+  cookie:
+    path: /
+    httpOnly: true
+    secure: false
+    maxAge: null
+  secret: secret
+
+db:
+  host: 127.0.0.1
+  port: 27017
+  name: adf
+  user: adf
+  pass: adf

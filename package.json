@@ -1,0 +1,32 @@
+{
+  "name": "adf-hackathon",
+  "version": "0.0.1",
+  "description": "ADF Hackathon",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ww24/adf-hackathon.git"
+  },
+  "author": "team-ho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ww24/adf-hackathon/issues"
+  },
+  "homepage": "https://github.com/ww24/adf-hackathon",
+  "dependencies": {
+    "body-parser": "^1.12.2",
+    "config": "^1.12.0",
+    "connect-mongo": "^0.8.0",
+    "express": "^4.12.3",
+    "express-session": "^1.10.4",
+    "hogan-express": "^0.5.2",
+    "js-yaml": "^3.2.7",
+    "mongoose": "^3.8.25",
+    "request": "^2.54.0",
+    "socket.io": "^1.3.5",
+    "validator": "^3.35.0"
+  }
+}
