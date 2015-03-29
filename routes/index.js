@@ -22,4 +22,6 @@ router.use(function (req, res) {
   res.status(404).send("Not Found");
 });
 
-module.exports = router;
+exports = module.exports = router;
+
+exports.realtime = routes.realtime;
