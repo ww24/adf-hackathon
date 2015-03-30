@@ -35,7 +35,7 @@
                 bitmap.y = (Math.random() * 768);
                 bitmap.scaleX = 0.5;
                 bitmap.scaleY = 0.5;
-                bitmap.cache(0, 0, 160, 160);
+                bitmap.cache(0, 0, 200, 200);
                 stage.addChild(bitmap);
                 objects.push(bitmap);
             }
