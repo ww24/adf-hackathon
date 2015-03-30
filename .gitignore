@@ -1,3 +1,7 @@
+
+# faces
+public/faces/*
+
 # Node.js
 node_modules
 *.log
@@ -15,3 +19,6 @@ config/*
 
 # Windows
 Thumbs.db
+
+# deploy
+deploy.sh
