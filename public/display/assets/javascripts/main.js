@@ -3,8 +3,7 @@
     var cj = createjs,
         stage, bitmap;
     var objects = [];
-    var display_frame;
-    var frame=1;
+    var display_timer, timer=900;
 
     function init() {
         stage = new cj.Stage('demoCanvas');
@@ -36,10 +35,12 @@
             }
         });
 
-        display_frame = new createjs.Text("Frame:"+frame++, "28px Titan One", "#000");
-        display_frame.x = 10;
-        display_frame.y = 10;
-        stage.addChild(display_frame);
+        display_timer = new createjs.Text(Math.floor(timer--/30), "100px Titan One", "#000");
+        display_timer.x = 1220;
+        display_timer.y = 10;
+        stage.addChild(display_timer);
+
+        timer = setInterval(countdown, 1000);
 
         stage.update();
     }
@@ -57,7 +58,7 @@
             objects[i].y+=1;
         }
 
-        display_frame.text = "Frame:"+frame++;
+        display_timer.text = Math.floor(timer--/30);
 
         stage.update();
     });
