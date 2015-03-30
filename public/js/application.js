@@ -8,8 +8,11 @@ function load_page(page){
 
 $(function(){
   $('#name_box').change(function() {
-    $('#image_file').css({
+    $('#image_box').css({
       display : ''
+    })
+    $('#name_box').css({
+      display : 'none'
     })
     $('#page2_name_label').text($('#name_box').val()+'ウイルス');
     // page2_name_label
