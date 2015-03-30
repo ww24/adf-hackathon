@@ -53,7 +53,7 @@ function realtime(io) {
     socket.on("register", function (data) {
       console.log("register:", data);
 
-      models.Client.create(data.name, data.image).then(function (data) {
+      models.Client.create(socket.id, data.name, data.image).then(function (data) {
         console.log(data);
       }).catch(function (err) {
         console.error(err);

@@ -1,3 +1,7 @@
+
+# faces
+public/faces/*
+
 # Node.js
 node_modules
 *.log
