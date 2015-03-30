@@ -10,6 +10,11 @@
         var queue = new createjs.LoadQueue();
         var i;
 
+        var socket = io.connect("/display");
+        socket.on("add", function (data) {
+          console.log(data);
+        });
+
         var arr=[];
         for(i=0; i<100; i++) {
           arr.push({id:'image_'+i, src:'./assets/images/virus.png'});
@@ -48,7 +53,7 @@
         for(var i = 0; i < objects.length; i++) {
             objects[i].y+=1;
         }
-        
+
         stage.update();
     });
 }(window));
