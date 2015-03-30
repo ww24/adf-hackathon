@@ -34,8 +34,9 @@
             }
         });
 
-        // display_frame = new createjs.Text("display_frame:"+createjs.Ticker.getdisplay_frame(), "28px Russo One", "#000");
-        display_frame = new createjs.Text("Frame:"+frame++, "28px Russo One", "#000");
+        display_frame = new createjs.Text("Frame:"+frame++, "28px Titan One", "#000");
+        display_frame.x = 10;
+        display_frame.y = 10;
         stage.addChild(display_frame);
 
         stage.update();
