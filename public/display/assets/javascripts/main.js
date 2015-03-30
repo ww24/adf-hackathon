@@ -34,8 +34,8 @@
                 var bitmap = new createjs.Bitmap(e.result);
                 bitmap.x = (Math.random() * 1366);
                 bitmap.y = (Math.random() * 768);
-                bitmap.scaleX = 0.8;
-                bitmap.scaleY = 0.8;
+                bitmap.scaleX = 0.5;
+                bitmap.scaleY = 0.5;
                 bitmap.cache(0, 0, 160, 160);
                 stage.addChild(bitmap);
                 objects.push(bitmap);
