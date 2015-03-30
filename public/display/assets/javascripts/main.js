@@ -1,9 +1,7 @@
-
 (function(window){
     var cj = createjs,
         stage, bitmap;
     var objects = [];
-    var display_timer, timer=90;
 
     function init() {
         stage = new cj.Stage('demoCanvas');
@@ -35,11 +33,6 @@
             }
         });
 
-        display_timer = new createjs.Text(Math.floor(timer--/30), "100px Titan One", "#000");
-        display_timer.x = 1220;
-        display_timer.y = 10;
-        stage.addChild(display_timer);
-
         stage.update();
     }
 
@@ -52,32 +45,10 @@
     // アニメーションループ
     createjs.Ticker.setFPS(30);
     createjs.Ticker.addEventListener('tick', function(){
-
-        // ゲーム終了条件
-        if(timer<0) {
-            stage.clear();
-            finish_screen();
-            return;
-        }
-
         for(var i = 0; i < objects.length; i++) {
             objects[i].y+=1;
         }
-
-        display_timer.text = Math.floor(timer--/30);
-
+        
         stage.update();
     });
-
-    function finish_screen() {
-        stage = new cj.Stage('demoCanvas');
-
-        var display_result;
-        display_result = new createjs.Text("999", "100px Titan One", "#000");
-        display_result.x = 600;
-        display_result.y = 10;
-        stage.addChild(display_result);
-
-        stage.update();
-    }
 }(window));
