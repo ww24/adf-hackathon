@@ -30,7 +30,7 @@ function realtime(io) {
       models.Client.create(socket.id, data.name, data.image).then(function (data) {
         console.log(data);
 
-        display.sockets.emit("add", {
+        display.emit("add", {
           id: socket.id,
           name: data.name,
           img_path: data.img_path
@@ -47,7 +47,7 @@ function realtime(io) {
     socket.on("tap", function (data) {
       console.log("tap:", data);
 
-      display.sockets.emit("tap", {
+      display.emit("tap", {
         id: socket.id
       });
     });
