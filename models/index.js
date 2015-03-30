@@ -3,7 +3,7 @@
  *
  */
 
-var mongoose = require("mongoose");
+// var mongoose = require("mongoose");
 var loader = require("../libs/loader");
 var config = require("config");
 var url = require("url");
