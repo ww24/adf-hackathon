@@ -10,7 +10,7 @@
         var queue = new createjs.LoadQueue();
         var i;
 
-        var socket = io.connect("/display");
+        var socket = io.connect(location.host + "/display");
         socket.on("add", function (data) {
           console.log(data);
         });
