@@ -5,13 +5,16 @@
         <link rel="stylesheet" type="text/css" href="./assets/stylesheets/normalize.css">
         <script src="./assets/javascripts/createjs.min.js" type="text/javascript"></script>
         <script src="./assets/javascripts/Box2dWeb.min.js" type="text/javascript"></script>
+    	  <script type="text/javascript" src="./assets/javascripts/oflow.js"></script>
         <script src="/socket.io/socket.io.js" type="text/javascript"></script>
         <script src="./assets/javascripts/main.js" type="text/javascript"></script>
         <link href='http://fonts.googleapis.com/css?family=Titan+One' rel='stylesheet' type='text/css'>
         <title>demo</title>
     </head>
     <body>
-        <canvas id="demoCanvas" width="1366" height="768">
+        <video id='videoOut' width='1366' style="position: absolute; left: 0; top: 0; z-index: 0;"></video>
+        <canvas id='scene' width='1366px' height='768px' style="position: absolute; left: 0; top: 0; z-index: 1; display:none"></canvas>
+        <canvas id="demoCanvas" width="1366" height="768" style="position: absolute; left: 0; top: 0; z-index: 2">
             Canvasが使えるブラウザで見てね
         </canvas>
     </body>
