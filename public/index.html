@@ -6,12 +6,12 @@
 	<title>Client side</title>
 </head>
 <body>
-  <div id="page1">
+  <!-- <div id="page1"> -->
+  <div id="page1" style="display:none">
     <form>
       <p>Name</p>
       <input type="text" name="user_name" id="name_box">
       <p>顔画像</p>
-      <!-- <input type="file" accept="image/*" id="image_file"/> -->
       <input type="file" accept="image/*" id="image_file" style="display:none">
     </form>
     <canvas id="canvas" width="200" height="200" style="display:none">
@@ -21,11 +21,12 @@
     <p>あなたの病名</p>
     <p id="page2_name_label"></p>
     <img id="page2_img" widht="200" height="200">
-    <p>ウイルス培養中.....</p>
+    <p>ボタンを押せ!!!!!</p>
+    <button type="button" id="attack_button">あなたのウイルスを攻撃!!!!</button>
   </div>
 
   <div id="page3" style="display:none">
-    <p>this is page 3</p>
+
   </div>
   <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
   <script src="http://localhost:3000/socket.io/socket.io.js"></script>

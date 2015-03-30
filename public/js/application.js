@@ -19,26 +19,19 @@ $(function(){
 function realtime(img_blob, name){
   socket = io.connect('http://localhost:3000/client');
   socket.emit('register',{ name: name, image: img_blob });
-  socket.on('start', function (data) {
-    console.log(data);
-    // page3へ
-  });
   socket.on('end', function (data) {
     console.log(data);
-    // page4へ
   });
-
-  socket.on('update', function (data) {
-    console.log(data);
-    // data.score = 現在のスコア(数値)
-  });
-
 }
 
 function tap(){
   if(socket == null)return;
   socket.emit('tap');
 }
+
+document.getElementById("attack_button").addEventListener("click", function(){
+  tap();
+});
 
 if (!HTMLCanvasElement.prototype.toBlob) {
  Object.defineProperty(HTMLCanvasElement.prototype, 'toBlob', {
