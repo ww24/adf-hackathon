@@ -3,7 +3,8 @@
     var cj = createjs,
         stage, bitmap;
     var objects = [];
-    var fps;
+    var display_frame;
+    var frame=1;
 
     function init() {
         stage = new cj.Stage('demoCanvas');
@@ -27,13 +28,15 @@
                 var bitmap = new createjs.Bitmap(e.result);
                 bitmap.x = (Math.random() * 1366);
                 bitmap.y = (Math.random() * 768);
+                bitmap.cache(0, 0, 160, 160);
                 stage.addChild(bitmap);
                 objects.push(bitmap);
             }
         });
 
-        fps = new createjs.Text("FPS:"+createjs.Ticker.getFPS(), "28px Russo One", "#000");
-        stage.addChild(fps);
+        // display_frame = new createjs.Text("display_frame:"+createjs.Ticker.getdisplay_frame(), "28px Russo One", "#000");
+        display_frame = new createjs.Text("Frame:"+frame++, "28px Russo One", "#000");
+        stage.addChild(display_frame);
 
         stage.update();
     }
@@ -44,15 +47,6 @@
         init();
     }, false);
 
-    // Stageオブジェクトを作成
-    var stage = new createjs.Stage('canvas');
-
-    // Bitmapオブジェクトを作成
-    var bitmap = new createjs.Bitmap('images/image_1.png');
-
-    // stageにBitmapオブジェクトを配置
-    stage.addChild(bitmap);
-
     // canvasの描画設定
     createjs.Ticker.setFPS(30);
     createjs.Ticker.addEventListener('tick', function(){
@@ -60,7 +54,7 @@
             objects[i].y+=1;
         }
 
-        fps.text = "FPS:"+createjs.Ticker.getFPS();
+        display_frame.text = "Frame:"+frame++;
 
         stage.update();
     });
