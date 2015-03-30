@@ -1,12 +1,8 @@
 body {
     text-align: center;
+    background-image: url("./image/jikken.png");
+    background-repeat: no-repeat;
+    min-height: 900px;
+    background-size:  auto 100% ;
 }
-#page1{
-  position: fixed;
-  top: 10;
-  left: 10;
-  z-index: 10;
-  border: none;
-  padding: 0px;
-  width: 100%;
-}
+

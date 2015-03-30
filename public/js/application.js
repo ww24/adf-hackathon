@@ -7,6 +7,9 @@ function load_page(page){
 }
 
 $(function(){
+  $('#form').submit(function(event){
+    return false;
+  });
   $('#name_box').change(function() {
     $('#image_box').css({
       display : ''
