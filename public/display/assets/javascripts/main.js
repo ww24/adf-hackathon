@@ -3,6 +3,8 @@
         stage, bitmap;
     var objects = [];
 
+    var socket = io.connect("/display");
+
     function init() {
         stage = new cj.Stage('demoCanvas');
 
@@ -12,7 +14,6 @@
 
         var arr=[];
 
-        var socket = io.connect("/display");
         socket.on("add", function (data) {
           console.log(data);
           arr.push({id:data.id, src:data.img_path});
