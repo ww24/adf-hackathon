@@ -7,7 +7,7 @@ var express = require("express");
 var socket = require("socket.io");
 var bodyParser = require("body-parser");
 var session = require("express-session");
-var MongoStore = require("connect-mongo")(session);
+// var MongoStore = require("connect-mongo")(session);
 var hogan = require("hogan-express");
 var config = require("config");
 var path = require("path");
@@ -29,20 +29,20 @@ app.engine("html", hogan);
 // middleware
 app.use(express.static(path.resolve(__dirname, "public")));
 app.use(bodyParser.json());
-app.use(session({
-  name: config.session.name,
-  cookie: config.session.cookie,
-  secret: config.session.secret,
-  store: new MongoStore({
-    db: config.db.name,
-    host: config.db.host,
-    port: config.db.port,
-    username: config.db.user,
-    password: config.db.pass
-  }),
-  resave: false,
-  saveUninitialized: true
-}));
+// app.use(session({
+//   name: config.session.name,
+//   cookie: config.session.cookie,
+//   secret: config.session.secret,
+//   store: new MongoStore({
+//     db: config.db.name,
+//     host: config.db.host,
+//     port: config.db.port,
+//     username: config.db.user,
+//     password: config.db.pass
+//   }),
+//   resave: false,
+//   saveUninitialized: true
+// }));
 
 // load routes
 app.use(routes);
