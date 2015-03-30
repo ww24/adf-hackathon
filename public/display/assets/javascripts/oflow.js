@@ -280,6 +280,12 @@ function VideoFlow(defaultVideoTag, zoneSize) {
 
             if (!canvas) { canvas = window.document.createElement('canvas'); }
             ctx = canvas.getContext('2d');
+
+            /*
+             * TODO: flip image from web camera
+             */
+            ctx.translate(width, 0);
+            ctx.scale(-1, 1);
         },
         animloop = function () {
             if (isCapturing) {
