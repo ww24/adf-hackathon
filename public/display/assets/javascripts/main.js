@@ -10,13 +10,8 @@
         var queue = new createjs.LoadQueue();
         var i;
 
-<<<<<<< HEAD
         var arr=[];
-
-        var socket = io.connect("/display");
-=======
         var socket = io.connect(location.host + "/display");
->>>>>>> master
         socket.on("add", function (data) {
           console.log(data);
           arr.push({id:data.id, src:data.img_path});
