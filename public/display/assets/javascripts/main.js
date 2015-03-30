@@ -13,7 +13,6 @@
         var i;
 
         var arr=[];
-        var socket = io.connect(location.host + "/display");
         socket.on("add", function (data) {
           console.log(data);
           arr.push({id:data.id, src:data.img_path});
