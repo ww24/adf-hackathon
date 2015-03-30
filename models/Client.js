@@ -6,13 +6,13 @@
 var fs = require("fs");
 var path = require("path");
 
-var dir_path = "faces";
+var dir_path = "../public/faces";
 
 var clients = new Map();
 
 exports.create = function (id, name, image) {
   return new Promise(function (resolve, reject) {
-    var filepath = path.resolve(__dirname, dir_path, id);
+    var filepath = path.resolve(__dirname, dir_path, id + ".png");
 
     fs.writeFile(filepath, image, function (err) {
       if (err) {
@@ -21,7 +21,7 @@ exports.create = function (id, name, image) {
 
       var data = {
         name: name,
-        img_path: path.join(dir_path, id)
+        img_path: "/faces/" + id + ".png"
       };
 
       clients.set(id, data);
