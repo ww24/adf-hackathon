@@ -1,51 +1,18 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="ja">
-<head>
-		<meta charset="utf-8">
-		<title>Display side</title>
-	  <style type="text/css">
-	  </style>
-	  <script type="text/javascript" src="./assets/javascripts/oflow.js"></script>
-	  <script type="text/javascript">
-	  function main() {
-	      var zoneSize = 8,
-        videoElement = document.getElementById('videoOut'),
-        videoWidth = videoElement.videoWidth,
-        videoHeight = videoElement.videoHeight;
-        webCamFlow = new oflow.WebCamFlow(videoElement, zoneSize),
-        canvas = document.getElementById('scene'),
-        sceneCtx = canvas.getContext('2d'),
-        sceneWidth = canvas.width,
-        sceneHeight = canvas.height,
-
-    		webCamFlow.onCalculated(function (direciton) {
-		        sceneCtx.clearRect(0, 0, sceneWidth, sceneHeight);
-		        for(var i = 0; i < direciton.zones.length; ++i) {
-	              var zone = direciton.zones[i];
-
-								sceneCtx.beginPath();
-								sceneCtx.arc(zone.x, zone.y, 1, 0, Math.PI*2, false);
-								sceneCtx.fillStyle = 'rgba(255, 0, 0, 255)';
-								sceneCtx.fill()
-								sceneCtx.closePath();
-
-								if(Math.sqrt(Math.pow(zone.u,2)+Math.pow(zone.v,2)) > 4) {
-									sceneCtx.beginPath();
-		              sceneCtx.strokeStyle = 'rgba(255, 255, 255, 255)';
-		              sceneCtx.moveTo(zone.x,zone.y);
-		              sceneCtx.lineTo(zone.x+zone.u, zone.y+zone.v);
-		              sceneCtx.stroke();
-								}
-	          }
-	      });
-	      webCamFlow.startCapture();
-	  }
-	  </script>
-</head>
-<body onload="main()" style='background-color: black'>
-    <div style='float:left'>
-        <video id='videoOut' width='600px'></video><br />
-    </div>
-    <canvas id='scene' width='1366px' height='768px'></canvas>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="./assets/stylesheets/normalize.css">
+        <script src="./assets/javascripts/createjs.min.js" type="text/javascript"></script>
+        <script src="./assets/javascripts/Box2dWeb.min.js" type="text/javascript"></script>
+        <script src="/socket.io/socket.io.js" type="text/javascript"></script>
+        <script src="./assets/javascripts/main.js" type="text/javascript"></script>
+        <link href='http://fonts.googleapis.com/css?family=Titan+One' rel='stylesheet' type='text/css'>
+        <title>demo</title>
+    </head>
+    <body>
+        <canvas id="demoCanvas" width="1366" height="768">
+            Canvasが使えるブラウザで見てね
+        </canvas>
+    </body>
 </html>

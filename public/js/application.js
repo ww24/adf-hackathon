@@ -20,7 +20,7 @@ $(function(){
 })
 
 function realtime(img_blob, name){
-  socket = io.connect('http://localhost:3000/client');
+  socket = io.connect(location.host + '/client');
   socket.emit('register',{ name: name, image: img_blob });
   socket.on('end', function (data) {
     console.log(data);
