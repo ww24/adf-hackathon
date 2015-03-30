@@ -11,6 +11,8 @@ $(function(){
     $('#image_file').css({
       display : ''
     })
+    $('#page2_name_label').text($('#name_box').val()+'ウイルス');
+    // page2_name_label
   });
 })
 

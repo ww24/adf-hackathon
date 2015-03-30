@@ -26,6 +26,8 @@ window.addEventListener("load", function(){
               canvas.toBlob(function(blob){
                 realtime(blob, name);
               });
+              $('#page2_img').attr("src",canvas.toDataURL());
+              load_page('page2');
             }
       }
       var file = document.getElementById("image_file").files[0];
