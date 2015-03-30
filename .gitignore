@@ -19,3 +19,6 @@ config/*
 
 # Windows
 Thumbs.db
+
+# deploy
+deploy.sh

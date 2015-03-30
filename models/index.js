@@ -23,6 +23,6 @@ if (config.db.user && config.db.pass) {
 var mongo_url = url.format(options);
 
 // create MongoDB connection
-mongoose.connect(mongo_url);
+// mongoose.connect(mongo_url);
 
 module.exports = loader(__dirname);
