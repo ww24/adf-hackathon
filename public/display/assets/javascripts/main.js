@@ -3,7 +3,7 @@
         stage, bitmap;
     var objects = [];
 
-    var socket = io.connect("/display");
+    var socket = io.connect(location.host + "/display");
 
     function init() {
         stage = new cj.Stage('demoCanvas');
@@ -17,7 +17,7 @@
         socket.on("add", function (data) {
           console.log(data);
           arr.push({id:data.id, src:data.img_path});
-          
+
           // 読み込み実行
           queue.loadManifest(arr);
         });
